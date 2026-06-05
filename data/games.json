@@ -5,121 +5,169 @@
       "id": "giants",
       "name": "読売ジャイアンツ",
       "win_rate": 0.623,
-      "recent_5": ["W", "W", "L", "W", "L"],
+      "recent_5": [
+        "W"
+      ],
       "avg_score": 4.2,
       "avg_concede": 3.1,
-      "home_win_rate": 0.680,
-      "away_win_rate": 0.560
+      "home_win_rate": 0.68,
+      "away_win_rate": 0.56
     },
     {
       "id": "tigers",
       "name": "阪神タイガース",
       "win_rate": 0.598,
-      "recent_5": ["L", "W", "W", "W", "L"],
+      "recent_5": [
+        "L"
+      ],
       "avg_score": 3.8,
       "avg_concede": 3.2,
-      "home_win_rate": 0.650,
-      "away_win_rate": 0.540
+      "home_win_rate": 0.65,
+      "away_win_rate": 0.54
     },
     {
       "id": "baystars",
       "name": "横浜DeNAベイスターズ",
       "win_rate": 0.562,
-      "recent_5": ["W", "L", "W", "L", "W"],
+      "recent_5": [
+        "L"
+      ],
       "avg_score": 4.5,
       "avg_concede": 3.8,
-      "home_win_rate": 0.620,
-      "away_win_rate": 0.500
+      "home_win_rate": 0.62,
+      "away_win_rate": 0.5
     },
     {
       "id": "carp",
       "name": "広島東洋カープ",
-      "win_rate": 0.540,
-      "recent_5": ["L", "L", "W", "W", "W"],
+      "win_rate": 0.54,
+      "recent_5": [
+        "L",
+        "L",
+        "W",
+        "W",
+        "W"
+      ],
       "avg_score": 3.9,
       "avg_concede": 3.5,
-      "home_win_rate": 0.600,
-      "away_win_rate": 0.480
+      "home_win_rate": 0.6,
+      "away_win_rate": 0.48
     },
     {
       "id": "swallows",
       "name": "東京ヤクルトスワローズ",
       "win_rate": 0.478,
-      "recent_5": ["L", "W", "L", "L", "W"],
+      "recent_5": [
+        "L",
+        "W",
+        "L",
+        "L",
+        "W"
+      ],
       "avg_score": 3.5,
       "avg_concede": 4.1,
-      "home_win_rate": 0.520,
-      "away_win_rate": 0.430
+      "home_win_rate": 0.52,
+      "away_win_rate": 0.43
     },
     {
       "id": "dragons",
       "name": "中日ドラゴンズ",
       "win_rate": 0.445,
-      "recent_5": ["W", "L", "L", "L", "W"],
+      "recent_5": [
+        "L"
+      ],
       "avg_score": 3.1,
       "avg_concede": 3.6,
-      "home_win_rate": 0.490,
-      "away_win_rate": 0.400
+      "home_win_rate": 0.49,
+      "away_win_rate": 0.4
     },
     {
       "id": "eagles",
       "name": "東北楽天ゴールデンイーグルス",
-      "win_rate": 0.610,
-      "recent_5": ["W", "W", "W", "L", "W"],
+      "win_rate": 0.61,
+      "recent_5": [
+        "L"
+      ],
       "avg_score": 4.3,
       "avg_concede": 3.3,
-      "home_win_rate": 0.670,
-      "away_win_rate": 0.550
+      "home_win_rate": 0.67,
+      "away_win_rate": 0.55
     },
     {
       "id": "hawks",
       "name": "福岡ソフトバンクホークス",
       "win_rate": 0.645,
-      "recent_5": ["W", "W", "W", "W", "L"],
+      "recent_5": [
+        "W"
+      ],
       "avg_score": 5.1,
       "avg_concede": 3.0,
-      "home_win_rate": 0.710,
-      "away_win_rate": 0.580
+      "home_win_rate": 0.71,
+      "away_win_rate": 0.58
     },
     {
       "id": "lions",
       "name": "埼玉西武ライオンズ",
-      "win_rate": 0.490,
-      "recent_5": ["L", "W", "L", "W", "L"],
+      "win_rate": 0.49,
+      "recent_5": [
+        "L",
+        "W",
+        "L",
+        "W",
+        "L"
+      ],
       "avg_score": 3.7,
       "avg_concede": 4.0,
-      "home_win_rate": 0.540,
-      "away_win_rate": 0.440
+      "home_win_rate": 0.54,
+      "away_win_rate": 0.44
     },
     {
       "id": "marines",
       "name": "千葉ロッテマリーンズ",
-      "win_rate": 0.510,
-      "recent_5": ["W", "L", "W", "L", "W"],
+      "win_rate": 0.51,
+      "recent_5": [
+        "W",
+        "L",
+        "W",
+        "L",
+        "W"
+      ],
       "avg_score": 3.8,
       "avg_concede": 3.7,
-      "home_win_rate": 0.560,
-      "away_win_rate": 0.460
+      "home_win_rate": 0.56,
+      "away_win_rate": 0.46
     },
     {
       "id": "fighters",
       "name": "北海道日本ハムファイターズ",
       "win_rate": 0.525,
-      "recent_5": ["W", "W", "L", "W", "L"],
+      "recent_5": [
+        "W",
+        "W",
+        "L",
+        "W",
+        "L"
+      ],
       "avg_score": 4.0,
       "avg_concede": 3.9,
-      "home_win_rate": 0.580,
-      "away_win_rate": 0.470
+      "home_win_rate": 0.58,
+      "away_win_rate": 0.47
     },
     {
       "id": "buffaloes",
       "name": "オリックス・バファローズ",
       "win_rate": 0.555,
-      "recent_5": ["L", "W", "W", "L", "W"],
+      "recent_5": [
+        "L",
+        "W",
+        "W",
+        "L",
+        "W"
+      ],
       "avg_score": 3.9,
       "avg_concede": 3.4,
-      "home_win_rate": 0.610,
-      "away_win_rate": 0.500
+      "home_win_rate": 0.61,
+      "away_win_rate": 0.5
     }
   ],
   "games": [
