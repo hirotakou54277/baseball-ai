@@ -3,6 +3,7 @@ NPB試合データ収集スクリプト
 GitHub Actionsで毎日実行される
 
 NPB URLパターン:
+  トップページ:     https://npb.jp/games/{year}/
   月別スケジュール: https://npb.jp/games/{year}/schedule_{mm}_detail.html
   スコアページ:     https://npb.jp/scores/{year}/{mmdd}/{home}-{away}-01/
   順位表(セ):       https://npb.jp/standings/cl/
@@ -13,57 +14,49 @@ import json
 import os
 import re
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone, date
 import requests
 from bs4 import BeautifulSoup
 
 JST = timezone(timedelta(hours=9))
 
-# NPBサイトのチーム略称 → アプリ内ID
 ABBR_TO_ID = {
-    "g":  "giants",    # 読売ジャイアンツ
-    "t":  "tigers",    # 阪神タイガース
-    "db": "baystars",  # 横浜DeNAベイスターズ
-    "c":  "carp",      # 広島東洋カープ
-    "s":  "swallows",  # 東京ヤクルトスワローズ
-    "d":  "dragons",   # 中日ドラゴンズ
-    "e":  "eagles",    # 東北楽天ゴールデンイーグルス
-    "h":  "hawks",     # 福岡ソフトバンクホークス
-    "l":  "lions",     # 埼玉西武ライオンズ
-    "m":  "marines",   # 千葉ロッテマリーンズ
-    "f":  "fighters",  # 北海道日本ハムファイターズ
-    "b":  "buffaloes", # オリックス・バファローズ
+    "g":  "giants",
+    "t":  "tigers",
+    "db": "baystars",
+    "c":  "carp",
+    "s":  "swallows",
+    "d":  "dragons",
+    "e":  "eagles",
+    "h":  "hawks",
+    "l":  "lions",
+    "m":  "marines",
+    "f":  "fighters",
+    "b":  "buffaloes",
 }
 
 TEAM_NAMES = {
-    "giants":   "読売ジャイアンツ",
-    "tigers":   "阪神タイガース",
-    "baystars": "横浜DeNAベイスターズ",
-    "carp":     "広島東洋カープ",
-    "swallows": "東京ヤクルトスワローズ",
-    "dragons":  "中日ドラゴンズ",
-    "eagles":   "東北楽天ゴールデンイーグルス",
-    "hawks":    "福岡ソフトバンクホークス",
-    "lions":    "埼玉西武ライオンズ",
-    "marines":  "千葉ロッテマリーンズ",
-    "fighters": "北海道日本ハムファイターズ",
-    "buffaloes":"オリックス・バファローズ",
+    "giants":    "読売ジャイアンツ",
+    "tigers":    "阪神タイガース",
+    "baystars":  "横浜DeNAベイスターズ",
+    "carp":      "広島東洋カープ",
+    "swallows":  "東京ヤクルトスワローズ",
+    "dragons":   "中日ドラゴンズ",
+    "eagles":    "東北楽天ゴールデンイーグルス",
+    "hawks":     "福岡ソフトバンクホークス",
+    "lions":     "埼玉西武ライオンズ",
+    "marines":   "千葉ロッテマリーンズ",
+    "fighters":  "北海道日本ハムファイターズ",
+    "buffaloes": "オリックス・バファローズ",
 }
 
-# 順位表のチーム名テキスト → ID
 NAME_TO_ID = {
-    "巨人":       "giants",
-    "阪神":       "tigers",
-    "ＤｅＮＡ":   "baystars",
-    "DeNA":       "baystars",
-    "広島":       "carp",
-    "ヤクルト":   "swallows",
-    "中日":       "dragons",
-    "楽天":       "eagles",
-    "ソフトバンク":"hawks",
-    "西武":       "lions",
-    "ロッテ":     "marines",
-    "日本ハム":   "fighters",
+    "巨人": "giants", "阪神": "tigers",
+    "ＤｅＮＡ": "baystars", "DeNA": "baystars",
+    "広島": "carp", "ヤクルト": "swallows",
+    "中日": "dragons", "楽天": "eagles",
+    "ソフトバンク": "hawks", "西武": "lions",
+    "ロッテ": "marines", "日本ハム": "fighters",
     "オリックス": "buffaloes",
 }
 
@@ -76,9 +69,12 @@ HEADERS = {
     )
 }
 
+# 過去何ヶ月分を取得するか（シーズン開幕月から）
+SEASON_START_MONTH = 3   # 3月開幕
+HISTORY_MONTHS = 4       # 最大4ヶ月さかのぼる
 
-def get(url: str):
-    """GETしてBeautifulSoupを返す。失敗時はNone。"""
+
+def get_soup(url):
     try:
         r = requests.get(url, headers=HEADERS, timeout=15)
         r.raise_for_status()
@@ -88,91 +84,73 @@ def get(url: str):
         return None
 
 
-# ─── 1. スケジュール取得 ─────────────────────────────────────
-
-def parse_score_link(href: str):
+def parse_score_link(href, year):
     """
-    /scores/2026/0605/g-m-01/ のようなURLから試合情報を抽出する。
-    戻り値: {date, home, away} または None
+    /scores/2026/0605/g-m-01/ → {date, home, away, href}
     """
-    m = re.search(r"/scores/\d+/(\d{4})/([a-z]+)-([a-z]+)-\d+/?$", href)
+    m = re.search(r"/scores/\d+/(\d{4})/([a-z]+)-([a-z]+)-\d+/?", href)
     if not m:
         return None
     mmdd, home_abbr, away_abbr = m.group(1), m.group(2), m.group(3)
     home_id = ABBR_TO_ID.get(home_abbr)
     away_id = ABBR_TO_ID.get(away_abbr)
     if not home_id or not away_id:
-        print(f"  [WARN] unknown abbr in {href}")
         return None
-    now = datetime.now(JST)
-    date_str = f"{now.year}-{mmdd[:2]}-{mmdd[2:]}"
+    date_str = f"{year}-{mmdd[:2]}-{mmdd[2:]}"
     return {"date": date_str, "home": home_id, "away": away_id, "href": href}
 
 
-def fetch_month_schedule(year: int, month: int) -> list[dict]:
+def collect_all_game_links(year, now_date):
     """
-    試合スケジュールをNPBから取得する。
-    - まず /games/{year}/ トップページから当月・翌月分のリンクを取得
-    - 次に月別詳細ページからも補完
+    ① トップページ + ② 月別ページ(シーズン開幕〜現在月) から全試合リンクを収集
     """
-    games = []
-    seen = set()
+    games = {}  # key: "date_home_away" → info dict
 
-    def extract_links(soup):
+    def extract(soup):
         if not soup:
             return
         for a in soup.find_all("a", href=True):
             href = a["href"]
             if "/scores/" not in href:
                 continue
-            # 対象月のみ抽出
-            if f"/{month:02d}" not in href and f"0{month}" not in href:
-                # 月またぎ対応のため月フィルタは緩く
-                pass
-            info = parse_score_link(href)
+            info = parse_score_link(href, year)
             if not info:
                 continue
             key = f"{info['date']}_{info['home']}_{info['away']}"
-            if key not in seen:
-                seen.add(key)
-                games.append(info)
+            if key not in games:
+                games[key] = info
 
-    # ① トップページ（今日・明日の試合リンクが含まれる）
-    top_url = f"{BASE_URL}/games/{year}/"
-    print(f"  Fetching top page: {top_url}")
-    extract_links(get(top_url))
+    # ① トップページ（今日・明日の試合リンクあり）
+    print("  [1/2] Fetching top page...")
+    extract(get_soup(f"{BASE_URL}/games/{year}/"))
 
-    # ② 月別詳細ページ（過去試合の結果リンクが含まれる）
-    month_url = f"{BASE_URL}/games/{year}/schedule_{month:02d}_detail.html"
-    print(f"  Fetching month page: {month_url}")
-    extract_links(get(month_url))
+    # ② 月別スケジュールページ（過去試合の結果リンクあり）
+    current_month = now_date.month
+    for month in range(SEASON_START_MONTH, current_month + 1):
+        url = f"{BASE_URL}/games/{year}/schedule_{month:02d}_detail.html"
+        print(f"  [2/2] Fetching month {month:02d}...")
+        extract(get_soup(url))
+        time.sleep(0.3)
 
-    print(f"  Found {len(games)} games total")
+    print(f"  Total game links found: {len(games)}")
     return games
 
 
-def fetch_score(href: str):
-    """
-    スコアページから最終スコアを取得する。
-    戻り値: (home_score, away_score) または None（試合前/取得失敗）
-    """
+def fetch_score(href):
+    """スコアページから (home_score, away_score) を取得。未終了はNone。"""
     url = BASE_URL + href if href.startswith("/") else href
-    soup = get(url)
+    soup = get_soup(url)
     if not soup:
         return None
 
-    # スコアボードのtable を探す
-    # NPBスコアページは <table> にイニングスコアが入る
-    # 合計点は「計」列の値
     for table in soup.find_all("table"):
         rows = table.find_all("tr")
         if len(rows) < 2:
             continue
-
-        headers = [th.get_text(strip=True) for th in rows[0].find_all(["th", "td"])]
+        headers = [th.get_text(strip=True)
+                   for th in rows[0].find_all(["th", "td"])]
         if "計" not in headers:
             continue
-
         calc_idx = headers.index("計")
         scores = []
         for row in rows[1:]:
@@ -181,67 +159,46 @@ def fetch_score(href: str):
                 val = cols[calc_idx].get_text(strip=True)
                 if val.isdigit():
                     scores.append(int(val))
-
         if len(scores) >= 2:
-            # NPBページは表示順: 先攻(away)が上、後攻(home)が下
-            away_score, home_score = scores[0], scores[1]
-            return home_score, away_score
-
-    # 試合前や取得失敗
+            # NPB: 先攻(away)が上、後攻(home)が下
+            return scores[1], scores[0]   # (home, away)
     return None
 
 
-# ─── 2. 順位表取得 ────────────────────────────────────────────
-
-def fetch_standings() -> dict[str, dict]:
-    """セ・パ両リーグの順位表を取得して {team_id: {win_rate}} を返す。"""
-    result: dict[str, dict] = {}
+def fetch_standings(year):
+    result = {}
     for league in ["cl", "pl"]:
         url = f"{BASE_URL}/standings/{league}/"
         print(f"  Fetching standings: {url}")
-        soup = get(url)
+        soup = get_soup(url)
         if not soup:
             continue
-
         for table in soup.find_all("table"):
             for row in table.find_all("tr")[1:]:
                 cols = row.find_all(["td", "th"])
                 if len(cols) < 4:
                     continue
-
-                # チーム名セル（最初のtd）
                 name_raw = cols[0].get_text(strip=True)
-                team_id = None
-                for key, tid in NAME_TO_ID.items():
-                    if key in name_raw:
-                        team_id = tid
-                        break
+                team_id = next(
+                    (tid for k, tid in NAME_TO_ID.items() if k in name_raw),
+                    None)
                 if not team_id:
                     continue
-
-                # 勝・敗・引分を探す（数字列）
-                nums = []
-                for col in cols[1:]:
-                    t = col.get_text(strip=True)
-                    if t.isdigit():
-                        nums.append(int(t))
-                    if len(nums) == 3:
-                        break
-
+                nums = [int(c.get_text(strip=True))
+                        for c in cols[1:]
+                        if c.get_text(strip=True).isdigit()][:3]
                 if len(nums) >= 2:
-                    win, loss = nums[0], nums[1]
-                    draw = nums[2] if len(nums) >= 3 else 0
-                    total = win + loss + draw
-                    win_rate = round(win / total, 3) if total > 0 else 0.500
-                    result[team_id] = {"win_rate": win_rate}
-
-    print(f"  Got standings for {len(result)} teams")
+                    w, l = nums[0], nums[1]
+                    d = nums[2] if len(nums) >= 3 else 0
+                    total = w + l + d
+                    result[team_id] = {
+                        "win_rate": round(w / total, 3) if total > 0 else 0.500
+                    }
+    print(f"  Standings: {len(result)} teams")
     return result
 
 
-# ─── 3. ファイル入出力 ────────────────────────────────────────
-
-def load_existing() -> dict:
+def load_existing():
     path = os.path.join(os.path.dirname(__file__), "..", "data", "games.json")
     try:
         with open(path, encoding="utf-8") as f:
@@ -250,18 +207,30 @@ def load_existing() -> dict:
         return {"teams": [], "games": [], "results": []}
 
 
-def save(data: dict):
+def save(data):
     path = os.path.join(os.path.dirname(__file__), "..", "data", "games.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"  Saved → {path}")
 
 
-# ─── 4. チームデータのマージ・更新 ───────────────────────────
-
-def build_teams(existing_teams: list[dict], standings: dict,
-                results: list[dict]) -> list[dict]:
+def build_teams(existing_teams, standings, results):
     existing_map = {t["id"]: t for t in existing_teams}
+
+    # 全結果から各チームの平均得点・失点を計算
+    team_scores = {tid: {"scored": [], "conceded": []}
+                   for tid in TEAM_NAMES}
+    for r in results:
+        hs, as_ = r.get("home_score"), r.get("away_score")
+        if hs is None or as_ is None:
+            continue
+        if r["home"] in team_scores:
+            team_scores[r["home"]]["scored"].append(hs)
+            team_scores[r["home"]]["conceded"].append(as_)
+        if r["away"] in team_scores:
+            team_scores[r["away"]]["scored"].append(as_)
+            team_scores[r["away"]]["conceded"].append(hs)
+
     teams = []
     for team_id, name in TEAM_NAMES.items():
         base = existing_map.get(team_id) or {
@@ -271,20 +240,46 @@ def build_teams(existing_teams: list[dict], standings: dict,
             "home_win_rate": 0.500, "away_win_rate": 0.500,
         }
         base["name"] = name
+
+        # 順位表から勝率を更新
         if team_id in standings:
             base["win_rate"] = standings[team_id]["win_rate"]
 
-        # recent_5 を結果から再計算
-        team_results = sorted(
+        # 全結果から平均得点・失点を計算
+        sc = team_scores[team_id]
+        if len(sc["scored"]) >= 3:
+            base["avg_score"] = round(
+                sum(sc["scored"]) / len(sc["scored"]), 2)
+            base["avg_concede"] = round(
+                sum(sc["conceded"]) / len(sc["conceded"]), 2)
+
+        # ホーム/アウェイ勝率を計算
+        home_results = [(r["home_score"], r["away_score"])
+                        for r in results
+                        if r["home"] == team_id
+                        and r.get("home_score") is not None]
+        away_results = [(r["away_score"], r["home_score"])
+                        for r in results
+                        if r["away"] == team_id
+                        and r.get("away_score") is not None]
+
+        if len(home_results) >= 3:
+            hw = sum(1 for s, c in home_results if s > c)
+            base["home_win_rate"] = round(hw / len(home_results), 3)
+        if len(away_results) >= 3:
+            aw = sum(1 for s, c in away_results if s > c)
+            base["away_win_rate"] = round(aw / len(away_results), 3)
+
+        # recent_5（直近5試合）
+        team_results_sorted = sorted(
             [r for r in results
-             if r.get("home") == team_id or r.get("away") == team_id],
+             if (r["home"] == team_id or r["away"] == team_id)
+             and r.get("home_score") is not None],
             key=lambda r: r["date"], reverse=True
         )
         wl = []
-        for r in team_results:
-            hs, as_ = r.get("home_score"), r.get("away_score")
-            if hs is None or as_ is None:
-                continue
+        for r in team_results_sorted:
+            hs, as_ = r["home_score"], r["away_score"]
             if r["home"] == team_id:
                 wl.append("W" if hs > as_ else "L")
             else:
@@ -298,37 +293,29 @@ def build_teams(existing_teams: list[dict], standings: dict,
     return teams
 
 
-# ─── 5. メイン ────────────────────────────────────────────────
-
 def main():
     now = datetime.now(JST)
     today = now.date()
     tomorrow = today + timedelta(days=1)
     today_str = today.strftime("%Y-%m-%d")
-    tomorrow_str = tomorrow.strftime("%Y-%m-%d")
+    year = today.year
 
-    print(f"=== Scraper start: {today_str} ===")
+    print(f"=== NPB Scraper: {today_str} ===")
 
     existing = load_existing()
 
     # 既存データをマップ化
-    all_games: dict[str, dict] = {}
+    all_games = {}
     for g in existing.get("games", []) + existing.get("results", []):
         key = f"{g['date']}_{g['home']}_{g['away']}"
         all_games[key] = g
 
-    # 今月・来月（月またぎ対応）のスケジュールを取得
-    months = {(now.year, now.month)}
-    if tomorrow.month != now.month:
-        months.add((tomorrow.year, tomorrow.month))
+    # 全試合リンクを収集（トップ + 月別ページ）
+    print("\n[Step 1] Collecting game links...")
+    new_links = collect_all_game_links(year, today)
 
-    new_game_infos = []
-    for year, month in months:
-        new_game_infos.extend(fetch_month_schedule(year, month))
-
-    # スケジュールをマージ（新規のみ追加）
-    for info in new_game_infos:
-        key = f"{info['date']}_{info['home']}_{info['away']}"
+    # 新規リンクをマージ
+    for key, info in new_links.items():
         if key not in all_games:
             all_games[key] = {
                 "date": info["date"],
@@ -338,27 +325,30 @@ def main():
                 "_href": info["href"],
             }
         else:
-            # href を保存（スコア取得用）
             all_games[key]["_href"] = info["href"]
 
-    # 過去の upcoming 試合のスコアを確認
-    print("Fetching scores for recent games...")
+    # 過去試合のスコアを取得（未取得分のみ）
+    print("\n[Step 2] Fetching scores for past games...")
+    fetch_count = 0
     for key, game in list(all_games.items()):
+        # 今日以前の試合でスコア未取得のものを対象
         if game.get("status") == "upcoming" and game["date"] <= today_str:
             href = game.get("_href")
             if not href:
                 continue
-            print(f"  Checking score: {game['date']} {game['home']} vs {game['away']}")
             score = fetch_score(href)
             if score is not None:
                 home_score, away_score = score
                 all_games[key]["home_score"] = home_score
                 all_games[key]["away_score"] = away_score
                 all_games[key]["status"] = "finished"
-                print(f"    → {game['home']} {home_score} - {away_score} {game['away']}")
-            time.sleep(0.5)  # サーバー負荷軽減
+                print(f"    {game['date']} {game['home']} {home_score}-{away_score} {game['away']}")
+                fetch_count += 1
+            time.sleep(0.4)
 
-    # _href は保存不要なので除去
+    print(f"  Fetched {fetch_count} new scores")
+
+    # _href除去
     for game in all_games.values():
         game.pop("_href", None)
 
@@ -370,24 +360,23 @@ def main():
     results = sorted(
         [g for g in all_games.values() if g["status"] == "finished"],
         key=lambda g: g["date"], reverse=True
-    )[:60]  # 直近60試合分を保持
+    )
 
-    # 順位表取得
-    print("Fetching standings...")
-    standings = fetch_standings()
+    print(f"\n[Step 3] Fetching standings...")
+    standings = fetch_standings(year)
 
-    # チームデータ構築
+    print(f"\n[Step 4] Building team stats from {len(results)} results...")
     teams = build_teams(existing.get("teams", []), standings, results)
 
     data = {
         "updated_at": today_str,
         "teams": teams,
         "games": upcoming,
-        "results": results,
+        "results": results,  # 全期間保持
     }
 
     save(data)
-    print(f"=== Done: {len(upcoming)} upcoming, {len(results)} results ===")
+    print(f"\n=== Done: {len(upcoming)} upcoming / {len(results)} results ===")
 
 
 if __name__ == "__main__":
