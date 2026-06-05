@@ -110,28 +110,44 @@ def parse_score_link(href: str):
 
 
 def fetch_month_schedule(year: int, month: int) -> list[dict]:
-    """月別スケジュールページから全試合リンクを取得する。"""
-    url = f"{BASE_URL}/games/{year}/schedule_{month:02d}_detail.html"
-    print(f"  Fetching schedule: {url}")
-    soup = get(url)
-    if not soup:
-        return []
-
+    """
+    試合スケジュールをNPBから取得する。
+    - まず /games/{year}/ トップページから当月・翌月分のリンクを取得
+    - 次に月別詳細ページからも補完
+    """
     games = []
     seen = set()
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if "/scores/" not in href:
-            continue
-        info = parse_score_link(href)
-        if not info:
-            continue
-        key = f"{info['date']}_{info['home']}_{info['away']}"
-        if key not in seen:
-            seen.add(key)
-            games.append(info)
 
-    print(f"  Found {len(games)} games in {year}/{month:02d}")
+    def extract_links(soup):
+        if not soup:
+            return
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if "/scores/" not in href:
+                continue
+            # 対象月のみ抽出
+            if f"/{month:02d}" not in href and f"0{month}" not in href:
+                # 月またぎ対応のため月フィルタは緩く
+                pass
+            info = parse_score_link(href)
+            if not info:
+                continue
+            key = f"{info['date']}_{info['home']}_{info['away']}"
+            if key not in seen:
+                seen.add(key)
+                games.append(info)
+
+    # ① トップページ（今日・明日の試合リンクが含まれる）
+    top_url = f"{BASE_URL}/games/{year}/"
+    print(f"  Fetching top page: {top_url}")
+    extract_links(get(top_url))
+
+    # ② 月別詳細ページ（過去試合の結果リンクが含まれる）
+    month_url = f"{BASE_URL}/games/{year}/schedule_{month:02d}_detail.html"
+    print(f"  Fetching month page: {month_url}")
+    extract_links(get(month_url))
+
+    print(f"  Found {len(games)} games total")
     return games
 
 
