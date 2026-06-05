@@ -6,7 +6,7 @@ import 'database_service.dart';
 
 // GitHubリポジトリのRaw URLに変更してください
 const _dataUrl =
-    'https://raw.githubusercontent.com/YOUR_USERNAME/baseball-ai/main/data/games.json';
+    'https://raw.githubusercontent.com/hirotakou54277/baseball-ai/main/data/games.json';
 
 class DataService {
   static Future<bool> refreshData() async {
