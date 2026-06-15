@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-15",
+  "updated_at": "2026-06-16",
   "teams": [
     {
       "id": "giants",
@@ -271,6 +271,18 @@
       "date": "2026-06-08",
       "home": "tigers",
       "away": "eagles",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-16",
+      "home": "tigers",
+      "away": "lions",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-16",
+      "home": "carp",
+      "away": "fighters",
       "status": "upcoming"
     }
   ],
