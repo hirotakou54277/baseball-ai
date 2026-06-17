@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17",
+  "updated_at": "2026-06-18",
   "teams": [
     {
       "id": "giants",
@@ -22,15 +22,15 @@
       "name": "阪神タイガース",
       "win_rate": 0.598,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "L",
         "L"
       ],
-      "avg_score": 3.64,
+      "avg_score": 3.74,
       "avg_concede": 3.34,
-      "home_win_rate": 0.5,
+      "home_win_rate": 0.515,
       "away_win_rate": 0.531
     },
     {
@@ -104,14 +104,14 @@
       "recent_5": [
         "L",
         "L",
+        "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
       "avg_score": 2.97,
-      "avg_concede": 3.8,
+      "avg_concede": 3.89,
       "home_win_rate": 0.424,
-      "away_win_rate": 0.29
+      "away_win_rate": 0.281
     },
     {
       "id": "hawks",
@@ -272,15 +272,17 @@
       "home": "tigers",
       "away": "eagles",
       "status": "upcoming"
-    },
+    }
+  ],
+  "results": [
     {
       "date": "2026-06-17",
       "home": "tigers",
       "away": "eagles",
-      "status": "upcoming"
-    }
-  ],
-  "results": [
+      "status": "finished",
+      "home_score": 10,
+      "away_score": 3
+    },
     {
       "date": "2026-06-16",
       "home": "tigers",
