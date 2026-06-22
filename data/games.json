@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22",
+  "updated_at": "2026-06-23",
   "teams": [
     {
       "id": "giants",
@@ -102,15 +102,15 @@
       "name": "東北楽天ゴールデンイーグルス",
       "win_rate": 0.61,
       "recent_5": [
-        "L",
+        "W",
         "L",
         "L",
         "L",
         "L"
       ],
-      "avg_score": 3.01,
-      "avg_concede": 4.0,
-      "home_win_rate": 0.424,
+      "avg_score": 3.09,
+      "avg_concede": 4.04,
+      "home_win_rate": 0.441,
       "away_win_rate": 0.265
     },
     {
@@ -134,16 +134,16 @@
       "name": "埼玉西武ライオンズ",
       "win_rate": 0.49,
       "recent_5": [
+        "L",
         "W",
         "W",
         "L",
-        "W",
         "W"
       ],
-      "avg_score": 3.77,
-      "avg_concede": 2.81,
+      "avg_score": 3.81,
+      "avg_concede": 2.89,
       "home_win_rate": 0.6,
-      "away_win_rate": 0.647
+      "away_win_rate": 0.629
     },
     {
       "id": "marines",
@@ -286,13 +286,51 @@
       "status": "upcoming"
     },
     {
-      "date": "2026-06-22",
+      "date": "2026-06-23",
+      "home": "dragons",
+      "away": "baystars",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "tigers",
+      "away": "swallows",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "carp",
+      "away": "giants",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "fighters",
+      "away": "marines",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-23",
       "home": "eagles",
       "away": "lions",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-23",
+      "home": "hawks",
+      "away": "buffaloes",
       "status": "upcoming"
     }
   ],
   "results": [
+    {
+      "date": "2026-06-22",
+      "home": "eagles",
+      "away": "lions",
+      "status": "finished",
+      "home_score": 8,
+      "away_score": 7
+    },
     {
       "date": "2026-06-21",
       "home": "giants",
