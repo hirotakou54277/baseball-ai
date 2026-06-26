@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26",
+  "updated_at": "2026-06-27",
   "teams": [
     {
       "id": "giants",
@@ -134,15 +134,15 @@
       "name": "埼玉西武ライオンズ",
       "win_rate": 0.49,
       "recent_5": [
-        "L",
-        "L",
-        "L",
         "W",
+        "L",
+        "L",
+        "L",
         "W"
       ],
-      "avg_score": 3.76,
-      "avg_concede": 2.94,
-      "home_win_rate": 0.6,
+      "avg_score": 3.77,
+      "avg_concede": 2.95,
+      "home_win_rate": 0.611,
       "away_win_rate": 0.595
     },
     {
@@ -166,16 +166,16 @@
       "name": "北海道日本ハムファイターズ",
       "win_rate": 0.525,
       "recent_5": [
+        "L",
         "W",
         "W",
         "L",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.96,
+      "avg_score": 3.95,
       "avg_concede": 3.64,
       "home_win_rate": 0.611,
-      "away_win_rate": 0.5
+      "away_win_rate": 0.486
     },
     {
       "id": "buffaloes",
@@ -323,18 +323,56 @@
     },
     {
       "date": "2026-06-26",
+      "home": "marines",
+      "away": "hawks",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "swallows",
+      "away": "dragons",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "baystars",
+      "away": "giants",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "carp",
+      "away": "tigers",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-27",
       "home": "lions",
       "away": "fighters",
       "status": "upcoming"
     },
     {
-      "date": "2026-06-26",
+      "date": "2026-06-27",
       "home": "marines",
       "away": "hawks",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-06-27",
+      "home": "buffaloes",
+      "away": "eagles",
       "status": "upcoming"
     }
   ],
   "results": [
+    {
+      "date": "2026-06-26",
+      "home": "lions",
+      "away": "fighters",
+      "status": "finished",
+      "home_score": 4,
+      "away_score": 3
+    },
     {
       "date": "2026-06-25",
       "home": "dragons",
