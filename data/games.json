@@ -1,36 +1,36 @@
 {
-  "updated_at": "2026-07-05",
+  "updated_at": "2026-07-06",
   "teams": [
     {
       "id": "giants",
       "name": "読売ジャイアンツ",
       "win_rate": 0.623,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.08,
-      "avg_concede": 3.08,
+      "avg_score": 3.05,
+      "avg_concede": 3.04,
       "home_win_rate": 0.525,
-      "away_win_rate": 0.529
+      "away_win_rate": 0.543
     },
     {
       "id": "tigers",
       "name": "阪神タイガース",
       "win_rate": 0.598,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.82,
-      "avg_concede": 3.3,
-      "home_win_rate": 0.486,
+      "avg_score": 3.85,
+      "avg_concede": 3.31,
+      "home_win_rate": 0.5,
       "away_win_rate": 0.556
     },
     {
@@ -40,30 +40,30 @@
       "recent_5": [
         "W",
         "W",
-        "L",
+        "W",
         "L",
         "L"
       ],
-      "avg_score": 3.68,
+      "avg_score": 3.71,
       "avg_concede": 4.01,
       "home_win_rate": 0.371,
-      "away_win_rate": 0.4
+      "away_win_rate": 0.415
     },
     {
       "id": "carp",
       "name": "広島東洋カープ",
       "win_rate": 0.54,
       "recent_5": [
-        "W",
         "L",
         "W",
         "L",
-        "W"
+        "W",
+        "L"
       ],
-      "avg_score": 2.97,
-      "avg_concede": 3.37,
+      "avg_score": 2.99,
+      "avg_concede": 3.4,
       "home_win_rate": 0.412,
-      "away_win_rate": 0.378
+      "away_win_rate": 0.368
     },
     {
       "id": "swallows",
@@ -73,12 +73,12 @@
         "L",
         "L",
         "L",
-        "W",
+        "L",
         "W"
       ],
-      "avg_score": 3.26,
-      "avg_concede": 3.59,
-      "home_win_rate": 0.457,
+      "avg_score": 3.27,
+      "avg_concede": 3.62,
+      "home_win_rate": 0.444,
       "away_win_rate": 0.579
     },
     {
@@ -86,15 +86,15 @@
       "name": "中日ドラゴンズ",
       "win_rate": 0.445,
       "recent_5": [
-        "W",
-        "W",
-        "W",
         "L",
+        "W",
+        "W",
+        "W",
         "L"
       ],
-      "avg_score": 3.28,
-      "avg_concede": 3.53,
-      "home_win_rate": 0.5,
+      "avg_score": 3.23,
+      "avg_concede": 3.49,
+      "home_win_rate": 0.488,
       "away_win_rate": 0.25
     },
     {
@@ -102,15 +102,15 @@
       "name": "東北楽天ゴールデンイーグルス",
       "win_rate": 0.61,
       "recent_5": [
-        "W",
-        "W",
         "L",
+        "W",
+        "W",
         "L",
         "L"
       ],
       "avg_score": 3.17,
-      "avg_concede": 3.89,
-      "home_win_rate": 0.475,
+      "avg_concede": 3.92,
+      "home_win_rate": 0.463,
       "away_win_rate": 0.278
     },
     {
@@ -118,15 +118,15 @@
       "name": "福岡ソフトバンクホークス",
       "win_rate": 0.645,
       "recent_5": [
-        "L",
         "W",
+        "L",
         "W",
         "W",
         "W"
       ],
-      "avg_score": 4.45,
-      "avg_concede": 3.4,
-      "home_win_rate": 0.628,
+      "avg_score": 4.49,
+      "avg_concede": 3.38,
+      "home_win_rate": 0.636,
       "away_win_rate": 0.559
     },
     {
@@ -140,57 +140,57 @@
         "L",
         "L"
       ],
-      "avg_score": 3.58,
+      "avg_score": 3.55,
       "avg_concede": 3.14,
       "home_win_rate": 0.579,
-      "away_win_rate": 0.537
+      "away_win_rate": 0.524
     },
     {
       "id": "marines",
       "name": "千葉ロッテマリーンズ",
       "win_rate": 0.51,
       "recent_5": [
+        "L",
         "W",
         "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.45,
-      "avg_concede": 3.72,
+      "avg_score": 3.43,
+      "avg_concede": 3.76,
       "home_win_rate": 0.588,
-      "away_win_rate": 0.425
+      "away_win_rate": 0.415
     },
     {
       "id": "fighters",
       "name": "北海道日本ハムファイターズ",
       "win_rate": 0.525,
       "recent_5": [
-        "L",
-        "L",
         "W",
+        "L",
+        "L",
         "W",
         "W"
       ],
-      "avg_score": 4.03,
-      "avg_concede": 3.55,
+      "avg_score": 4.05,
+      "avg_concede": 3.54,
       "home_win_rate": 0.641,
-      "away_win_rate": 0.488
+      "away_win_rate": 0.5
     },
     {
       "id": "buffaloes",
       "name": "オリックス・バファローズ",
       "win_rate": 0.555,
       "recent_5": [
+        "W",
         "L",
         "L",
         "L",
-        "L",
-        "W"
+        "L"
       ],
       "avg_score": 3.43,
-      "avg_concede": 3.71,
-      "home_win_rate": 0.73,
+      "avg_concede": 3.68,
+      "home_win_rate": 0.737,
       "away_win_rate": 0.282
     }
   ],
@@ -362,45 +362,57 @@
       "home": "buffaloes",
       "away": "lions",
       "status": "upcoming"
-    },
+    }
+  ],
+  "results": [
     {
       "date": "2026-07-05",
       "home": "swallows",
       "away": "baystars",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 4,
+      "away_score": 6
     },
     {
       "date": "2026-07-05",
       "home": "dragons",
       "away": "giants",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 0,
+      "away_score": 1
     },
     {
       "date": "2026-07-05",
       "home": "tigers",
       "away": "carp",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 6,
+      "away_score": 4
     },
     {
       "date": "2026-07-05",
       "home": "eagles",
       "away": "fighters",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 3,
+      "away_score": 6
     },
     {
       "date": "2026-07-05",
       "home": "buffaloes",
       "away": "lions",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 3,
+      "away_score": 1
     },
     {
       "date": "2026-07-05",
       "home": "hawks",
       "away": "marines",
-      "status": "upcoming"
-    }
-  ],
-  "results": [
+      "status": "finished",
+      "home_score": 7,
+      "away_score": 2
+    },
     {
       "date": "2026-07-04",
       "home": "swallows",
