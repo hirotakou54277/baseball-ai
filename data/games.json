@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-03",
+  "updated_at": "2026-08-04",
   "teams": [
     {
       "id": "giants",
@@ -106,12 +106,12 @@
         "L",
         "L",
         "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.21,
-      "avg_concede": 4.12,
+      "avg_score": 3.24,
+      "avg_concede": 4.17,
       "home_win_rate": 0.469,
-      "away_win_rate": 0.289
+      "away_win_rate": 0.283
     },
     {
       "id": "hawks",
@@ -182,15 +182,15 @@
       "name": "オリックス・バファローズ",
       "win_rate": 0.555,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.42,
-      "avg_concede": 3.96,
-      "home_win_rate": 0.696,
+      "avg_score": 3.48,
+      "avg_concede": 3.98,
+      "home_win_rate": 0.702,
       "away_win_rate": 0.294
     }
   ],
@@ -370,13 +370,45 @@
       "status": "upcoming"
     },
     {
-      "date": "2026-08-03",
-      "home": "buffaloes",
-      "away": "eagles",
+      "date": "2026-08-04",
+      "home": "baystars",
+      "away": "tigers",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-04",
+      "home": "dragons",
+      "away": "swallows",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-04",
+      "home": "carp",
+      "away": "giants",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-04",
+      "home": "marines",
+      "away": "lions",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-04",
+      "home": "hawks",
+      "away": "fighters",
       "status": "upcoming"
     }
   ],
   "results": [
+    {
+      "date": "2026-08-03",
+      "home": "buffaloes",
+      "away": "eagles",
+      "status": "finished",
+      "home_score": 9,
+      "away_score": 6
+    },
     {
       "date": "2026-08-02",
       "home": "giants",
