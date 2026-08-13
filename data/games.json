@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13",
+  "updated_at": "2026-08-14",
   "teams": [
     {
       "id": "giants",
@@ -8,13 +8,13 @@
       "recent_5": [
         "L",
         "L",
+        "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.37,
+      "avg_score": 3.35,
       "avg_concede": 3.22,
-      "home_win_rate": 0.509,
+      "home_win_rate": 0.5,
       "away_win_rate": 0.574
     },
     {
@@ -25,13 +25,13 @@
         "W",
         "W",
         "W",
-        "L",
+        "W",
         "L"
       ],
-      "avg_score": 3.8,
-      "avg_concede": 3.19,
+      "avg_score": 3.79,
+      "avg_concede": 3.18,
       "home_win_rate": 0.5,
-      "away_win_rate": 0.604
+      "away_win_rate": 0.611
     },
     {
       "id": "baystars",
@@ -39,15 +39,15 @@
       "win_rate": 0.562,
       "recent_5": [
         "W",
-        "L",
         "W",
+        "L",
         "W",
         "W"
       ],
-      "avg_score": 3.93,
-      "avg_concede": 3.85,
+      "avg_score": 3.94,
+      "avg_concede": 3.82,
       "home_win_rate": 0.48,
-      "away_win_rate": 0.426
+      "away_win_rate": 0.436
     },
     {
       "id": "carp",
@@ -87,14 +87,14 @@
       "win_rate": 0.445,
       "recent_5": [
         "L",
-        "W",
         "L",
         "W",
+        "L",
         "W"
       ],
-      "avg_score": 3.41,
-      "avg_concede": 3.37,
-      "home_win_rate": 0.527,
+      "avg_score": 3.38,
+      "avg_concede": 3.38,
+      "home_win_rate": 0.518,
       "away_win_rate": 0.314
     },
     {
@@ -102,15 +102,15 @@
       "name": "東北楽天ゴールデンイーグルス",
       "win_rate": 0.61,
       "recent_5": [
+        "L",
         "W",
         "L",
         "L",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.22,
-      "avg_concede": 4.07,
-      "home_win_rate": 0.471,
+      "avg_score": 3.2,
+      "avg_concede": 4.11,
+      "home_win_rate": 0.462,
       "away_win_rate": 0.294
     },
     {
@@ -118,15 +118,15 @@
       "name": "福岡ソフトバンクホークス",
       "win_rate": 0.645,
       "recent_5": [
-        "W",
-        "W",
-        "W",
         "L",
-        "W"
+        "W",
+        "W",
+        "W",
+        "L"
       ],
-      "avg_score": 4.85,
+      "avg_score": 4.83,
       "avg_concede": 3.27,
-      "home_win_rate": 0.655,
+      "home_win_rate": 0.643,
       "away_win_rate": 0.62
     },
     {
@@ -134,47 +134,47 @@
       "name": "埼玉西武ライオンズ",
       "win_rate": 0.49,
       "recent_5": [
+        "L",
         "W",
         "W",
         "L",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.55,
-      "avg_concede": 3.28,
+      "avg_score": 3.53,
+      "avg_concede": 3.33,
       "home_win_rate": 0.556,
-      "away_win_rate": 0.538
+      "away_win_rate": 0.528
     },
     {
       "id": "marines",
       "name": "千葉ロッテマリーンズ",
       "win_rate": 0.51,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.53,
-      "avg_concede": 3.99,
+      "avg_score": 3.54,
+      "avg_concede": 3.98,
       "home_win_rate": 0.551,
-      "away_win_rate": 0.385
+      "away_win_rate": 0.396
     },
     {
       "id": "fighters",
       "name": "北海道日本ハムファイターズ",
       "win_rate": 0.525,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.95,
-      "avg_concede": 3.51,
-      "home_win_rate": 0.6,
+      "avg_score": 3.99,
+      "avg_concede": 3.5,
+      "home_win_rate": 0.607,
       "away_win_rate": 0.5
     },
     {
@@ -182,16 +182,16 @@
       "name": "オリックス・バファローズ",
       "win_rate": 0.555,
       "recent_5": [
+        "W",
         "L",
         "W",
         "L",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.48,
-      "avg_concede": 3.95,
+      "avg_score": 3.52,
+      "avg_concede": 3.93,
       "home_win_rate": 0.694,
-      "away_win_rate": 0.304
+      "away_win_rate": 0.316
     }
   ],
   "games": [
@@ -377,42 +377,88 @@
     },
     {
       "date": "2026-08-13",
-      "home": "giants",
-      "away": "tigers",
-      "status": "upcoming"
-    },
-    {
-      "date": "2026-08-13",
       "home": "swallows",
       "away": "carp",
       "status": "upcoming"
     },
     {
+      "date": "2026-08-14",
+      "home": "swallows",
+      "away": "baystars",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-14",
+      "home": "dragons",
+      "away": "giants",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-14",
+      "home": "carp",
+      "away": "tigers",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-14",
+      "home": "lions",
+      "away": "marines",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-14",
+      "home": "buffaloes",
+      "away": "fighters",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-08-14",
+      "home": "hawks",
+      "away": "eagles",
+      "status": "upcoming"
+    }
+  ],
+  "results": [
+    {
+      "date": "2026-08-13",
+      "home": "giants",
+      "away": "tigers",
+      "status": "finished",
+      "home_score": 2,
+      "away_score": 3
+    },
+    {
       "date": "2026-08-13",
       "home": "dragons",
       "away": "baystars",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 1,
+      "away_score": 5
     },
     {
       "date": "2026-08-13",
       "home": "fighters",
       "away": "lions",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 8,
+      "away_score": 2
     },
     {
       "date": "2026-08-13",
       "home": "eagles",
       "away": "buffaloes",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 2,
+      "away_score": 8
     },
     {
       "date": "2026-08-13",
       "home": "hawks",
       "away": "marines",
-      "status": "upcoming"
-    }
-  ],
-  "results": [
+      "status": "finished",
+      "home_score": 3,
+      "away_score": 4
+    },
     {
       "date": "2026-08-12",
       "home": "giants",
