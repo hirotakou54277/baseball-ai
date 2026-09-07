@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07",
+  "updated_at": "2026-09-08",
   "teams": [
     {
       "id": "giants",
@@ -397,6 +397,42 @@
       "date": "2026-09-06",
       "home": "swallows",
       "away": "dragons",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-08",
+      "home": "giants",
+      "away": "dragons",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-08",
+      "home": "baystars",
+      "away": "swallows",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-08",
+      "home": "tigers",
+      "away": "carp",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-08",
+      "home": "marines",
+      "away": "eagles",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-08",
+      "home": "buffaloes",
+      "away": "lions",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-08",
+      "home": "hawks",
+      "away": "fighters",
       "status": "upcoming"
     }
   ],
