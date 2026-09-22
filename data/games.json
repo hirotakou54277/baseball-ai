@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21",
+  "updated_at": "2026-09-22",
   "teams": [
     {
       "id": "giants",
@@ -23,14 +23,14 @@
       "win_rate": 0.598,
       "recent_5": [
         "W",
+        "W",
         "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.61,
-      "avg_concede": 3.11,
-      "home_win_rate": 0.5,
+      "avg_score": 3.6,
+      "avg_concede": 3.1,
+      "home_win_rate": 0.507,
       "away_win_rate": 0.591
     },
     {
@@ -39,15 +39,15 @@
       "win_rate": 0.562,
       "recent_5": [
         "L",
-        "W",
         "L",
         "W",
+        "L",
         "W"
       ],
-      "avg_score": 3.93,
+      "avg_score": 3.91,
       "avg_concede": 3.6,
       "home_win_rate": 0.53,
-      "away_win_rate": 0.449
+      "away_win_rate": 0.443
     },
     {
       "id": "carp",
@@ -55,15 +55,15 @@
       "win_rate": 0.54,
       "recent_5": [
         "L",
+        "L",
         "W",
         "L",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.02,
-      "avg_concede": 3.71,
+      "avg_score": 2.99,
+      "avg_concede": 3.76,
       "home_win_rate": 0.446,
-      "away_win_rate": 0.369
+      "away_win_rate": 0.364
     },
     {
       "id": "swallows",
@@ -87,14 +87,14 @@
       "win_rate": 0.445,
       "recent_5": [
         "W",
-        "L",
-        "L",
         "W",
+        "L",
+        "L",
         "W"
       ],
-      "avg_score": 3.32,
-      "avg_concede": 3.44,
-      "home_win_rate": 0.529,
+      "avg_score": 3.37,
+      "avg_concede": 3.41,
+      "home_win_rate": 0.535,
       "away_win_rate": 0.313
     },
     {
@@ -166,15 +166,15 @@
       "name": "北海道日本ハムファイターズ",
       "win_rate": 0.525,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 4.17,
+      "avg_score": 4.18,
       "avg_concede": 3.7,
-      "home_win_rate": 0.588,
+      "home_win_rate": 0.594,
       "away_win_rate": 0.493
     },
     {
@@ -182,16 +182,16 @@
       "name": "オリックス・バファローズ",
       "win_rate": 0.555,
       "recent_5": [
-        "W",
-        "W",
         "L",
+        "W",
+        "W",
         "L",
         "L"
       ],
       "avg_score": 3.46,
       "avg_concede": 4.19,
       "home_win_rate": 0.594,
-      "away_win_rate": 0.333
+      "away_win_rate": 0.328
     }
   ],
   "games": [
@@ -419,24 +419,6 @@
     },
     {
       "date": "2026-09-21",
-      "home": "dragons",
-      "away": "carp",
-      "status": "upcoming"
-    },
-    {
-      "date": "2026-09-21",
-      "home": "tigers",
-      "away": "baystars",
-      "status": "upcoming"
-    },
-    {
-      "date": "2026-09-21",
-      "home": "fighters",
-      "away": "buffaloes",
-      "status": "upcoming"
-    },
-    {
-      "date": "2026-09-21",
       "home": "eagles",
       "away": "hawks",
       "status": "upcoming"
@@ -446,9 +428,69 @@
       "home": "marines",
       "away": "lions",
       "status": "upcoming"
+    },
+    {
+      "date": "2026-09-22",
+      "home": "swallows",
+      "away": "tigers",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-22",
+      "home": "baystars",
+      "away": "dragons",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-22",
+      "home": "carp",
+      "away": "giants",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-22",
+      "home": "fighters",
+      "away": "eagles",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-22",
+      "home": "marines",
+      "away": "buffaloes",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-09-22",
+      "home": "hawks",
+      "away": "lions",
+      "status": "upcoming"
     }
   ],
   "results": [
+    {
+      "date": "2026-09-21",
+      "home": "dragons",
+      "away": "carp",
+      "status": "finished",
+      "home_score": 10,
+      "away_score": 0
+    },
+    {
+      "date": "2026-09-21",
+      "home": "tigers",
+      "away": "baystars",
+      "status": "finished",
+      "home_score": 3,
+      "away_score": 2
+    },
+    {
+      "date": "2026-09-21",
+      "home": "fighters",
+      "away": "buffaloes",
+      "status": "finished",
+      "home_score": 5,
+      "away_score": 3
+    },
     {
       "date": "2026-09-20",
       "home": "giants",
