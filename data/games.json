@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04",
+  "updated_at": "2026-10-05",
   "teams": [
     {
       "id": "giants",
@@ -24,14 +24,14 @@
       "recent_5": [
         "L",
         "L",
+        "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.69,
+      "avg_score": 3.67,
       "avg_concede": 3.11,
       "home_win_rate": 0.507,
-      "away_win_rate": 0.592
+      "away_win_rate": 0.583
     },
     {
       "id": "baystars",
@@ -39,14 +39,14 @@
       "win_rate": 0.562,
       "recent_5": [
         "W",
+        "W",
         "L",
         "L",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.91,
-      "avg_concede": 3.6,
-      "home_win_rate": 0.528,
+      "avg_score": 3.9,
+      "avg_concede": 3.58,
+      "home_win_rate": 0.534,
       "away_win_rate": 0.451
     },
     {
@@ -56,14 +56,14 @@
       "recent_5": [
         "W",
         "W",
-        "L",
         "W",
+        "L",
         "W"
       ],
-      "avg_score": 3.01,
+      "avg_score": 3.04,
       "avg_concede": 3.66,
       "home_win_rate": 0.479,
-      "away_win_rate": 0.377
+      "away_win_rate": 0.386
     },
     {
       "id": "swallows",
@@ -71,14 +71,14 @@
       "win_rate": 0.478,
       "recent_5": [
         "L",
+        "L",
         "W",
         "L",
-        "L",
-        "W"
+        "L"
       ],
       "avg_score": 3.13,
-      "avg_concede": 3.98,
-      "home_win_rate": 0.414,
+      "avg_concede": 4.0,
+      "home_win_rate": 0.408,
       "away_win_rate": 0.437
     },
     {
@@ -102,16 +102,16 @@
       "name": "東北楽天ゴールデンイーグルス",
       "win_rate": 0.61,
       "recent_5": [
-        "W",
         "L",
         "W",
         "L",
-        "W"
+        "W",
+        "L"
       ],
-      "avg_score": 3.31,
-      "avg_concede": 3.93,
+      "avg_score": 3.3,
+      "avg_concede": 3.92,
       "home_win_rate": 0.471,
-      "away_win_rate": 0.333
+      "away_win_rate": 0.329
     },
     {
       "id": "hawks",
@@ -151,14 +151,14 @@
       "win_rate": 0.51,
       "recent_5": [
         "W",
+        "W",
         "L",
         "L",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.47,
-      "avg_concede": 4.07,
-      "home_win_rate": 0.529,
+      "avg_score": 3.46,
+      "avg_concede": 4.06,
+      "home_win_rate": 0.536,
       "away_win_rate": 0.37
     },
     {
@@ -436,25 +436,43 @@
       "status": "upcoming"
     },
     {
+      "date": "2026-10-05",
+      "home": "eagles",
+      "away": "hawks",
+      "status": "upcoming"
+    },
+    {
+      "date": "2026-10-05",
+      "home": "marines",
+      "away": "lions",
+      "status": "upcoming"
+    }
+  ],
+  "results": [
+    {
       "date": "2026-10-04",
       "home": "swallows",
       "away": "carp",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 4,
+      "away_score": 7
     },
     {
       "date": "2026-10-04",
       "home": "baystars",
       "away": "tigers",
-      "status": "upcoming"
+      "status": "finished",
+      "home_score": 2,
+      "away_score": 1
     },
     {
       "date": "2026-10-04",
       "home": "marines",
       "away": "eagles",
-      "status": "upcoming"
-    }
-  ],
-  "results": [
+      "status": "finished",
+      "home_score": 3,
+      "away_score": 2
+    },
     {
       "date": "2026-10-03",
       "home": "giants",
