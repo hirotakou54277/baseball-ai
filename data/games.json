@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06",
+  "updated_at": "2026-10-07",
   "teams": [
     {
       "id": "giants",
@@ -22,15 +22,15 @@
       "name": "阪神タイガース",
       "win_rate": 0.598,
       "recent_5": [
-        "L",
-        "L",
-        "L",
         "W",
+        "L",
+        "L",
+        "L",
         "W"
       ],
-      "avg_score": 3.67,
-      "avg_concede": 3.11,
-      "home_win_rate": 0.507,
+      "avg_score": 3.65,
+      "avg_concede": 3.09,
+      "home_win_rate": 0.514,
       "away_win_rate": 0.583
     },
     {
@@ -54,16 +54,16 @@
       "name": "広島東洋カープ",
       "win_rate": 0.54,
       "recent_5": [
-        "W",
-        "W",
-        "W",
         "L",
-        "W"
+        "W",
+        "W",
+        "W",
+        "L"
       ],
-      "avg_score": 3.04,
-      "avg_concede": 3.66,
+      "avg_score": 3.03,
+      "avg_concede": 3.65,
       "home_win_rate": 0.479,
-      "away_win_rate": 0.386
+      "away_win_rate": 0.38
     },
     {
       "id": "swallows",
@@ -136,14 +136,14 @@
       "recent_5": [
         "W",
         "W",
-        "L",
         "W",
+        "L",
         "W"
       ],
       "avg_score": 3.52,
-      "avg_concede": 3.27,
+      "avg_concede": 3.24,
       "home_win_rate": 0.569,
-      "away_win_rate": 0.529
+      "away_win_rate": 0.535
     },
     {
       "id": "marines",
@@ -151,14 +151,14 @@
       "win_rate": 0.51,
       "recent_5": [
         "L",
-        "W",
-        "W",
         "L",
+        "W",
+        "W",
         "L"
       ],
-      "avg_score": 3.45,
-      "avg_concede": 4.08,
-      "home_win_rate": 0.529,
+      "avg_score": 3.42,
+      "avg_concede": 4.07,
+      "home_win_rate": 0.521,
       "away_win_rate": 0.37
     },
     {
@@ -436,19 +436,29 @@
       "status": "upcoming"
     },
     {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "home": "tigers",
       "away": "carp",
       "status": "upcoming"
+    }
+  ],
+  "results": [
+    {
+      "date": "2026-10-06",
+      "home": "tigers",
+      "away": "carp",
+      "status": "finished",
+      "home_score": 2,
+      "away_score": 1
     },
     {
       "date": "2026-10-06",
       "home": "marines",
       "away": "lions",
-      "status": "upcoming"
-    }
-  ],
-  "results": [
+      "status": "finished",
+      "home_score": 0,
+      "away_score": 3
+    },
     {
       "date": "2026-10-05",
       "home": "eagles",
