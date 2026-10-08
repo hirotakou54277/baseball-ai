@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07",
+  "updated_at": "2026-10-08",
   "teams": [
     {
       "id": "giants",
@@ -23,14 +23,14 @@
       "win_rate": 0.598,
       "recent_5": [
         "W",
+        "W",
         "L",
         "L",
-        "L",
-        "W"
+        "L"
       ],
-      "avg_score": 3.65,
-      "avg_concede": 3.09,
-      "home_win_rate": 0.514,
+      "avg_score": 3.64,
+      "avg_concede": 3.08,
+      "home_win_rate": 0.521,
       "away_win_rate": 0.583
     },
     {
@@ -55,15 +55,15 @@
       "win_rate": 0.54,
       "recent_5": [
         "L",
+        "L",
         "W",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.03,
-      "avg_concede": 3.65,
+      "avg_score": 3.01,
+      "avg_concede": 3.64,
       "home_win_rate": 0.479,
-      "away_win_rate": 0.38
+      "away_win_rate": 0.375
     },
     {
       "id": "swallows",
@@ -436,13 +436,21 @@
       "status": "upcoming"
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "home": "tigers",
-      "away": "carp",
+      "away": "swallows",
       "status": "upcoming"
     }
   ],
   "results": [
+    {
+      "date": "2026-10-07",
+      "home": "tigers",
+      "away": "carp",
+      "status": "finished",
+      "home_score": 2,
+      "away_score": 1
+    },
     {
       "date": "2026-10-06",
       "home": "tigers",
