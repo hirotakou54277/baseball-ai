@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08",
+  "updated_at": "2026-10-09",
   "teams": [
     {
       "id": "giants",
@@ -22,15 +22,15 @@
       "name": "阪神タイガース",
       "win_rate": 0.598,
       "recent_5": [
-        "W",
-        "W",
         "L",
+        "W",
+        "W",
         "L",
         "L"
       ],
-      "avg_score": 3.64,
+      "avg_score": 3.62,
       "avg_concede": 3.08,
-      "home_win_rate": 0.521,
+      "home_win_rate": 0.514,
       "away_win_rate": 0.583
     },
     {
@@ -70,16 +70,16 @@
       "name": "東京ヤクルトスワローズ",
       "win_rate": 0.478,
       "recent_5": [
+        "W",
         "L",
         "L",
         "W",
-        "L",
         "L"
       ],
-      "avg_score": 3.13,
-      "avg_concede": 4.0,
+      "avg_score": 3.14,
+      "avg_concede": 3.97,
       "home_win_rate": 0.408,
-      "away_win_rate": 0.437
+      "away_win_rate": 0.444
     },
     {
       "id": "dragons",
@@ -434,15 +434,17 @@
       "home": "tigers",
       "away": "swallows",
       "status": "upcoming"
-    },
+    }
+  ],
+  "results": [
     {
       "date": "2026-10-08",
       "home": "tigers",
       "away": "swallows",
-      "status": "upcoming"
-    }
-  ],
-  "results": [
+      "status": "finished",
+      "home_score": 0,
+      "away_score": 4
+    },
     {
       "date": "2026-10-07",
       "home": "tigers",
