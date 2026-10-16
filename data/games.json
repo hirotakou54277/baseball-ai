@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15",
+  "updated_at": "2026-10-16",
   "teams": [
     {
       "id": "giants",
@@ -24,13 +24,13 @@
       "recent_5": [
         "L",
         "L",
+        "L",
         "W",
-        "W",
-        "L"
+        "W"
       ],
-      "avg_score": 3.59,
-      "avg_concede": 3.08,
-      "home_win_rate": 0.507,
+      "avg_score": 3.57,
+      "avg_concede": 3.06,
+      "home_win_rate": 0.5,
       "away_win_rate": 0.583
     },
     {
@@ -44,10 +44,10 @@
         "W",
         "W"
       ],
-      "avg_score": 3.87,
-      "avg_concede": 3.52,
+      "avg_score": 3.85,
+      "avg_concede": 3.5,
       "home_win_rate": 0.534,
-      "away_win_rate": 0.473
+      "away_win_rate": 0.48
     },
     {
       "id": "carp",
@@ -119,14 +119,14 @@
       "win_rate": 0.645,
       "recent_5": [
         "W",
-        "L",
-        "L",
         "W",
+        "L",
+        "L",
         "W"
       ],
-      "avg_score": 4.93,
+      "avg_score": 4.94,
       "avg_concede": 3.14,
-      "home_win_rate": 0.68,
+      "home_win_rate": 0.684,
       "away_win_rate": 0.592
     },
     {
@@ -167,15 +167,15 @@
       "win_rate": 0.525,
       "recent_5": [
         "L",
-        "W",
-        "W",
         "L",
-        "W"
+        "W",
+        "W",
+        "L"
       ],
-      "avg_score": 4.1,
-      "avg_concede": 3.67,
+      "avg_score": 4.08,
+      "avg_concede": 3.68,
       "home_win_rate": 0.583,
-      "away_win_rate": 0.507
+      "away_win_rate": 0.5
     },
     {
       "id": "buffaloes",
@@ -436,19 +436,35 @@
       "status": "upcoming"
     },
     {
-      "date": "2026-10-15",
+      "date": "2026-10-16",
       "home": "tigers",
       "away": "baystars",
       "status": "upcoming"
     },
     {
-      "date": "2026-10-15",
+      "date": "2026-10-16",
       "home": "hawks",
       "away": "fighters",
       "status": "upcoming"
     }
   ],
   "results": [
+    {
+      "date": "2026-10-15",
+      "home": "tigers",
+      "away": "baystars",
+      "status": "finished",
+      "home_score": 0,
+      "away_score": 1
+    },
+    {
+      "date": "2026-10-15",
+      "home": "hawks",
+      "away": "fighters",
+      "status": "finished",
+      "home_score": 6,
+      "away_score": 2
+    },
     {
       "date": "2026-10-14",
       "home": "tigers",
