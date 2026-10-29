@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28",
+  "updated_at": "2026-10-29",
   "teams": [
     {
       "id": "giants",
@@ -38,16 +38,16 @@
       "name": "横浜DeNAベイスターズ",
       "win_rate": 0.562,
       "recent_5": [
-        "W",
-        "W",
-        "W",
-        "W",
+        "L",
+        "L",
+        "L",
+        "L",
         "W"
       ],
-      "avg_score": 3.88,
-      "avg_concede": 3.49,
-      "home_win_rate": 0.534,
-      "away_win_rate": 0.494
+      "avg_score": 3.82,
+      "avg_concede": 3.48,
+      "home_win_rate": 0.52,
+      "away_win_rate": 0.481
     },
     {
       "id": "carp",
@@ -121,13 +121,13 @@
         "W",
         "W",
         "W",
-        "L",
-        "L"
+        "W",
+        "W"
       ],
-      "avg_score": 4.95,
-      "avg_concede": 3.13,
-      "home_win_rate": 0.688,
-      "away_win_rate": 0.592
+      "avg_score": 4.9,
+      "avg_concede": 3.09,
+      "home_win_rate": 0.696,
+      "away_win_rate": 0.603
     },
     {
       "id": "lions",
@@ -437,6 +437,38 @@
     }
   ],
   "results": [
+    {
+      "date": "2026-10-28",
+      "home": "hawks",
+      "away": "baystars",
+      "status": "finished",
+      "home_score": 4,
+      "away_score": 2
+    },
+    {
+      "date": "2026-10-27",
+      "home": "hawks",
+      "away": "baystars",
+      "status": "finished",
+      "home_score": 2,
+      "away_score": 1
+    },
+    {
+      "date": "2026-10-25",
+      "home": "baystars",
+      "away": "hawks",
+      "status": "finished",
+      "home_score": 3,
+      "away_score": 4
+    },
+    {
+      "date": "2026-10-24",
+      "home": "baystars",
+      "away": "hawks",
+      "status": "finished",
+      "home_score": 1,
+      "away_score": 3
+    },
     {
       "date": "2026-10-17",
       "home": "tigers",
